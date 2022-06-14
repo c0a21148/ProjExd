@@ -1,8 +1,10 @@
 import random
 global x,y
 alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-x = []
-y = []
+x = 10
+y = 2
+
+def main():
 
 print("対象文字")
 for i in range(10):
