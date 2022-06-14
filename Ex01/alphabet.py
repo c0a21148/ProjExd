@@ -4,7 +4,7 @@ alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R"
 x = 10
 y = 2
 
-def main():
+def main():#差分用
 
 print("対象文字")
 for i in range(10):
