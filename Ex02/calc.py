@@ -5,8 +5,16 @@ c=0
 def button_click(event):
     btn = event.widget
     num = btn["text"]
-    tkm.showinfo(num, f"[{num}]ボタンが押されました")
-    entry.insert(tk.END,f"{num}")
+    #tkm.showinfo(num, f"[{num}]ボタンが押されました")
+    #entry.insert(tk.END,f"{num}")
+
+    if num == "=":
+        a = entry.get()
+        ans = eval(a)
+        entry.delete(0,tk.END)
+        entry.insert(tk.END,ans)
+    else:
+        entry.insert(tk.END,f"{num}")
 
 if __name__ == "__main__":
     root = tk.Tk()
