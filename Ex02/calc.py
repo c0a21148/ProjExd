@@ -1,10 +1,10 @@
 import tkinter as tk
 import tkinter.messagebox as tkm
-p=4
+p=4　
 b=1 
-d=0
-r=4
-c=0
+d=0 
+r=4 　
+c=0 
 def button_click(event):
     btn = event.widget
     num = btn["text"]
