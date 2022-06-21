@@ -22,7 +22,7 @@ def button_click(event):
         y = eval(a)/100
         entry.delete(0,tk.END)
         entry.insert(tk.END,y)
-    for i,num in enumerate([i for i in range(9,0,-1)] + ["+"] + ["-"] + ["*"] + ["/"] +["="]):#９から０と四則演算、＝を順番に置く
+    for i,num in enumerate([i for i in range(9,0,-1)] + ["+"] + ["-"] + ["*"] + ["/"] +["="]):　#９から０と四則演算、＝を順番に置く
     elif num =="**":
         a = entry.get()
         y = eval(a)/100
