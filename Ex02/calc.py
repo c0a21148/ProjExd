@@ -1,10 +1,10 @@
 import tkinter as tk
 import tkinter.messagebox as tkm
-p=4　
-b=1 
-d=0 
-r=4 　
-c=0 
+p=4　　
+c=0 # %,**,!を任意の位置に置くための変数
+d=0 # %,**,!を任意の位置に置くための変数
+r=4 # 1~9,四則演算を任意の位置に置くための変数　
+c=0 # 1~9,四則演算を任意の位置に置くための変数
 def button_click(event):
     btn = event.widget
     num = btn["text"]
