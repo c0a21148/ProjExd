@@ -20,7 +20,7 @@ if __name__ == "__main__":
     root = tk.Tk()
     #root.geometry("300x500")
     root.title("電卓")
-    for i,num in enumerate([i for i in range(9,-1,-1)]+["+"]+["="]):
+    for i,num in enumerate([i for i in range(9,-1,-1)]+["+"]+["tax"]+["="]):
         button = tk.Button(root, text=f"{num}", width=4, height=2,font=("Times New Roman", 30))
         button.grid(row=r,column=c)
         c+=1
