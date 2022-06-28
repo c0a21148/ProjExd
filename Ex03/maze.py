@@ -1,4 +1,4 @@
-from re import I
+#from re import I
 import tkinter as tk
 import maze_maker
 
