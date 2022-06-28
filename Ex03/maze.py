@@ -23,21 +23,21 @@ def main_proc():
     #    "Right":[+20,0]
     #}
     
-    if key == "Up" and maze_bg[my-1][mx] == 0:
-        my -=1
-        c = 6
+    if key == "Up" and maze_bg[my-1][mx] == 0: #上キーを押し、上一マスが移動可能だったとき
+        my -=1 #こうかとんが１マス上に進む
+        c = 6  #こうかとんが上を向く
 
     if key == "Down" and maze_bg[my+1][mx] == 0:
         my +=1
-        c = 8
+        c = 8 #こうかとんが下を向くmaze.py
 
     if key == "Left" and maze_bg[my][mx-1] == 0:
         mx -=1
-        c = 5
+        c = 5 #こうかとんが左を向く
 
     if key == "Right" and maze_bg[my][mx+1] == 0:
         mx +=1
-        c = 2
+        c = 2  #こうかとんが右を向く
 
     tori = tk.PhotoImage(file=f"fig/{c}.png")
     cx,cy = mx*100+50,my*100+50
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     mx,my=1,1
     cx,cy = mx*100+50,my*100+50
     canvas.create_image(cx,cy,image=tori,tag="tori")
-    
+
     key = ""
     root.bind("<KeyPress>",key_down)
     root.bind("<KeyRelease>",key_up)
