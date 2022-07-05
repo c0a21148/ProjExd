@@ -94,9 +94,9 @@ def main():
         vy *= tate
 
         if kkimg_rct.colliderect(bmimg_rct) == True:
-            kkimg_sfc = pg.image.load("fig/4.png")
+            kkimg_sfc = pg.image.load("fig/3.png")
             root.mainloop()
-            return pg.quit()
+            
 
 
         pg.display.update()
