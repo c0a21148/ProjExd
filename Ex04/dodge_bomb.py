@@ -4,8 +4,17 @@ import sys
 import tkinter as tk
 
 def main():
-    
+    root = tk.Tk()
+    root.title("GAME OVER")
+    root.geometry("500x200")
+
+    label1 = tk.Label(root,text="下手くそ!",font=("Ricty Diminished",80))
+    #label2 = tk.Label(root,text=f"{time}",font=("Ricty Diminished",80))
+    label1.pack()
+    #label2.pack()
+
     clock = pg.time.Clock()
+    a =5
     pg.display.set_caption("逃げろ！こうかとん")
     screen_sfc = pg.display.set_mode((1600,900)) #surface
     screen_rct = screen_sfc.get_rect() 
@@ -51,7 +60,32 @@ def main():
                 
             if key_states[pg.K_RIGHT] == True: 
                 kkimg_sfc.centerx -= 1
-                
+        if key_states[pg.K_s] == True: 
+            vx *= 1.01
+            vy *= 1.01
+        if key_states[pg.K_a] == True: 
+            x1 = bmimg_rct.centerx
+            y1 = bmimg_rct.centery
+            a += 1
+            bmimg_sfc = pg.Surface((20 + a,20 + a))
+            bmimg_sfc.set_colorkey((0,0,0))
+            pg.draw.circle(bmimg_sfc,(255,0,0),(10+a/2,10+a/2),10+a/2)
+            bmimg_rct =bmimg_sfc.get_rect()
+            bmimg_rct.centerx = x1
+            bmimg_rct.centery = y1
+
+        if key_states[pg.K_d] == True: 
+            x1 = bmimg_rct.centerx
+            y1 = bmimg_rct.centery
+            a -= 1
+            bmimg_sfc = pg.Surface((20 + a,20 + a))
+            bmimg_sfc.set_colorkey((0,0,0))
+            pg.draw.circle(bmimg_sfc,(255,0,0),(10+a/2,10+a/2),10+a/2)
+            bmimg_rct =bmimg_sfc.get_rect()
+            bmimg_rct.centerx = x1
+            bmimg_rct.centery = y1
+
+
         screen_sfc.blit(kkimg_sfc,kkimg_rct)
         bmimg_rct.move_ip(vx,vy)
         screen_sfc.blit(bmimg_sfc,bmimg_rct)
@@ -60,6 +94,8 @@ def main():
         vy *= tate
 
         if kkimg_rct.colliderect(bmimg_rct) == True:
+            kkimg_sfc = pg.image.load("fig/4.png")
+            root.mainloop()
             return pg.quit()
 
 
