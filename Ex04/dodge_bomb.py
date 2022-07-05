@@ -17,17 +17,23 @@ def main():
     a =5
     pg.display.set_caption("逃げろ！こうかとん")
     screen_sfc = pg.display.set_mode((1600,900)) #surface
-    screen_rct = screen_sfc.get_rect() 
+    screen_rct = screen_sfc.get_rect()
+
     bgimg_sfc = pg.image.load("fig/pg_bg.jpg")
     bgimg_rct = bgimg_sfc.get_rect()
+
     screen_sfc.blit(bgimg_sfc,bgimg_rct)
+
     kkimg_sfc = pg.image.load("fig/6.png")
     kkimg_sfc = pg.transform.rotozoom(kkimg_sfc, 0, 2.0)
     kkimg_rct = kkimg_sfc.get_rect()
     kkimg_rct.center = 900,400
+
     bmimg_sfc = pg.Surface((20,20))
     bmimg_sfc.set_colorkey((0,0,0))
+
     pg.draw.circle(bmimg_sfc,(255,0,0),(10,10),10)
+    
     bmimg_rct = bmimg_sfc.get_rect()
     bmimg_rct.centerx = random.randint(0,screen_rct.width)
     bmimg_rct.centery = random.randint(0,screen_rct.height)
@@ -44,23 +50,23 @@ def main():
             if event.type == pg.QUIT:return
 
         key_states = pg.key.get_pressed()
-        if key_states[pg.K_UP] == True: kkimg_rct.centery -= 1
-        if key_states[pg.K_DOWN] == True: kkimg_rct.centery += 1
-        if key_states[pg.K_LEFT] == True: kkimg_rct.centerx -= 1
-        if key_states[pg.K_RIGHT] == True: kkimg_rct.centerx += 1
+        if key_states[pg.K_UP] : kkimg_rct.centery -= 1
+        if key_states[pg.K_DOWN] : kkimg_rct.centery += 1
+        if key_states[pg.K_LEFT] : kkimg_rct.centerx -= 1
+        if key_states[pg.K_RIGHT] : kkimg_rct.centerx += 1
         if check_bound(kkimg_rct,screen_rct) != (1,1):
-            if key_states[pg.K_UP] == True: 
+            if key_states[pg.K_UP] : 
                 kkimg_rct.centery += 1
                 
-            if key_states[pg.K_DOWN] == True: 
+            if key_states[pg.K_DOWN] : 
                 kkimg_rct.centery -= 1
                 
-            if key_states[pg.K_LEFT] == True: 
+            if key_states[pg.K_LEFT] : 
                 kkimg_rct.centerx += 1
                 
-            if key_states[pg.K_RIGHT] == True: 
+            if key_states[pg.K_RIGHT]: 
                 kkimg_sfc.centerx -= 1
-        if key_states[pg.K_s] == True: 
+        if key_states[pg.K_s] : 
             vx *= 1.01
             vy *= 1.01
         if key_states[pg.K_a] == True: 
@@ -93,7 +99,7 @@ def main():
         vx *= yoko
         vy *= tate
 
-        if kkimg_rct.colliderect(bmimg_rct) == True:
+        if kkimg_rct.colliderect(bmimg_rct) == True: #こうかとんが爆弾と重なると
             kkimg_sfc = pg.image.load("fig/3.png")
             root.mainloop()
             
