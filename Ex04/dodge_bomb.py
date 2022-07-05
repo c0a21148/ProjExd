@@ -19,6 +19,12 @@ def main():
         screen_sfc.blit(kkimg_sfc,kkimg_rct)
         for event in pg.event.get():
             if event.type == pg.QUIT : return
+
+        key_states = pg.key.get_pressed()
+        if key_states[pg.K_UP] == True: kkimg_rct.centery -= 1
+        if key_states[pg.K_DOWN] == True: kkimg_rct.centery += 1
+        if key_states[pg.K_LEFT] == True: kkimg_rct.centerx -= 1
+        if key_states[pg.K_RIGHT] == True: kkimg_rct.centerx += 1
         
         pg.display.update()
         clock.tick(1000)
