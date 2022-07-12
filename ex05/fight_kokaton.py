@@ -66,7 +66,7 @@ class Beam:#レーザーを放つ
         self.blit(scr)
         
 
-class Bomb:
+class Bomb: #爆弾クラス
     def __init__(self, color, size, vxy, scr: Screen):
         self.sfc = pg.Surface((2*size, 2*size)) # Surface
         self.sfc.set_colorkey((0, 0, 0)) 
