@@ -102,7 +102,7 @@ class Bomb: #爆弾クラス
 
 
 
-def music():     
+def music(): #音楽の再生
     mixer.init()
     mixer.music.load("fig/2_23_AM.mp3")
     mixer.music.play(5)
