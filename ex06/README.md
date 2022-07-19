@@ -1,17 +1,13 @@
-# 第5回
-## 負けるな！こうかとん（ex05/fight_kokaton.py）
-### ゲーム概要
-- ex05/fight_kokaton.pyを実行すると，1600x900のスクリーンに草原が描画され，
-こうかとんを移動させ飛び回る爆弾から逃げるゲーム
-- こうかとんが爆弾と接触するとゲームオーバーで終了する
-### 操作方法
-- 矢印キーでこうかとんを上下左右に移動する
-### 追加機能
-- sを押すと爆弾が加速する
-- aを押すと爆弾が減速する
-- spaceを押すと工科トンがビームを出す
-- BGMが流れる
+# 第13回
+## ブロック崩し
+### 機能
+- メッセージ表示
+- ブロックにぶつかると壊れる
+- 
 ### ToDo（実装しようと思ったけど時間がなかった）
-- [ ] 敵を複数だす
-- [ ]ビームに敵が当たると消える
-### メモ
+- [ ] scoreの表示
+- [ ] ねらった方向に球を飛ばす
+
+### 参考サイト
+http://westplain.sakuraweb.com/translate/pygame/Sprite.cgi#pygame.sprite.Sprite　
+https://algorithm.joho.info/programming/python/pygame-blockout/
